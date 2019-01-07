@@ -10,7 +10,7 @@ COPY ./package.json ./package-lock.json /usr/src/app/
 
 WORKDIR /usr/src/app
 
-RUN apk add --update jq bash coreutils openssl lz cyrus-sasl\
+RUN apk add --update jq bash coreutils openssl lz4 cyrus-sasl\
     && apk add --virtual build-deps \
                          python \
                          build-base \

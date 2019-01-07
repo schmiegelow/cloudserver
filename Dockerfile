@@ -1,4 +1,4 @@
-FROM node:6-alpine
+FROM node:8-alpine
 MAINTAINER Giorgio Regni <gr@scality.com>
 
 ENV NO_PROXY localhost,127.0.0.1
@@ -12,10 +12,14 @@ WORKDIR /usr/src/app
 
 RUN apk add --update jq bash coreutils openssl lz4 cyrus-sasl \
     && apk add --virtual build-deps \
+                         openssl-dev \
+                         lz4-dev \
+                         cyrus-sasl-dev \
                          python \
-                         build-base \
                          git \
                          bsd-compat-headers \
+                         make \
+                         g++ \
     && npm install --production \
     && npm cache clear --force \
     && apk del build-deps \

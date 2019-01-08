@@ -1,7 +1,7 @@
 const assert = require('assert');
-const { errors } = require('arsenal');
+const { errors, storage } = require('arsenal');
 
-const AwsClient = require('../../../lib/data/external/AwsClient');
+const AwsClient = storage.data.external.AwsClient;
 const DummyService = require('../DummyService');
 const { DummyRequestLogger } = require('../helpers');
 
